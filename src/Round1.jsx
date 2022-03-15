@@ -16,7 +16,7 @@ const Round = ({ data, games }) => {
   return data.length ? (
     <div className="round">
       <h3>Round 1</h3>
-      <BracketGame pet1={winnerFromGame(1)} pet2={winnerFromGame(2)} game={games[2]} />
+      <BracketGame pet1={winnerFromGame(0)} pet2={winnerFromGame(1)} game={games[2]} />
       {/* <BracketGame pet1={pet(28)} pet2={pet(35)} game={games[3]} />
       <BracketGame pet1={pet(27)} pet2={pet(36)} game={games[4]} />
       <BracketGame pet1={pet(30)} pet2={pet(33)} game={games[5]} />
