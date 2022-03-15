@@ -1,10 +1,12 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable indent */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import FullBracket from './FullBracket';
 import Round0 from './Round0';
 import Round1 from './Round1';
+import Round2 from './Round2';
+import Round3 from './Round3';
+import Round4 from './Round4';
 
 const Layout = ({ data, games, currentRound, setCurrentRound }) => {
   const [x, setX] = useState(0);
@@ -14,18 +16,16 @@ const Layout = ({ data, games, currentRound, setCurrentRound }) => {
   const minDistance = 50;
   const round0 = <Round0 data={data} games={games} />;
   const round1 = <Round1 data={data} games={games} />;
-  // const round2 = <Round2 data={data} games={games} />;
-  // const round3 = <Round3 data={data} games={games} />;
-  // const round4 = <Round4 data={data} games={games} />;
-  // const round5 = <Round5 data={data} games={games} />;
+  const round2 = <Round2 data={data} games={games} />;
+  const round3 = <Round3 data={data} games={games} />;
+  const round4 = <Round4 data={data} games={games} />;
   let selectedRound = round0;
 
   switch (currentRound) {
     case '1': selectedRound = round1; break;
-    // case "2": selectedRound = round2; break;
-    // case "3": selectedRound = round3; break;
-    // case "4": selectedRound = round4; break;
-    // case "5": selectedRound = round5; break;
+    case '2': selectedRound = round2; break;
+    case '3': selectedRound = round3; break;
+    case '4': selectedRound = round4; break;
   }
 
   const round = parseInt(currentRound);
@@ -53,9 +53,10 @@ const Layout = ({ data, games, currentRound, setCurrentRound }) => {
       } else {
         setCurrentRound(nextRound);
       }
-      setSwiping(false);
-      setSwipeDiff(0);
     }
+    setSwiping(false);
+    setSwipeDiff(0);
+    setX(0);
   };
 
 
