@@ -10,8 +10,8 @@ const App = () => {
   const [currentRound, setCurrentRound] = useState('');
 
   useEffect(() => {
-    const q1 = query(collection(db, 'pets2022'), orderBy('name'));
-    const q2 = query(collection(db, 'games2022'), orderBy('name'));
+    const q1 = query(collection(db, 'pets2022'), orderBy('seed'));
+    const q2 = query(collection(db, 'games2022'), orderBy('id'));
     const q3 = query(collection(db, 'currentRound2022'));
     const getPets = async () => {
       const loadData = await getDocs(q1);

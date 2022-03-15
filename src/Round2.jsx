@@ -16,15 +16,11 @@ const Round = ({ data, games }) => {
 
   return data.length ? (
     <div className="round">
-      <h3>Sweet 16</h3>
-      <BracketGame pet1={pet(1)} pet2={winnerFromGame(1)} game={game(9)} />
-      <BracketGame pet1={pet(8)} pet2={pet(9)} game={game(5)} />
-      <BracketGame pet1={pet(4)} pet2={winnerFromGame(2)} game={game(10)} />
-      <BracketGame pet1={pet(5)} pet2={pet(12)} game={game(6)} />
-      <BracketGame pet1={pet(2)} pet2={winnerFromGame(3)} game={game(11)} />
-      <BracketGame pet1={pet(7)} pet2={pet(10)} game={game(7)} />
-      <BracketGame pet1={pet(3)} pet2={winnerFromGame(4)} game={game(12)} />
-      <BracketGame pet1={pet(6)} pet2={pet(11)} game={game(8)} />
+      <h3>Elite 8</h3>
+      <BracketGame pet1={winnerFromGame(9)} pet2={winnerFromGame(5)} game={game(13)} />
+      <BracketGame pet1={winnerFromGame(10)} pet2={winnerFromGame(6)} game={game(14)} />
+      <BracketGame pet1={winnerFromGame(11)} pet2={winnerFromGame(7)} game={game(15)} />
+      <BracketGame pet1={winnerFromGame(12)} pet2={winnerFromGame(8)} game={game(16)} />
     </div>
   ) : <div></div>;
 };

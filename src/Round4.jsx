@@ -1,19 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BracketGame from './BracketGame';
-import { petData } from './helpers';
+import { petData, unknownPet } from './helpers';
 
 const Round = ({ data, games }) => {
   const pet = (id) => petData(data, id - 1);
   const game = (id) => games[id - 1];
+  const winnerFromGame = (gameId) => {
+    const winningId = games[gameId - 1].winner;
+    if (winningId === '') {
+      return unknownPet(games[gameId - 1]);
+    }
+    return pet(winningId);
+  };
 
   return data.length ? (
     <div className="round">
-      <h3>Play-In Round</h3>
-      <BracketGame pet1={pet(16)} pet2={pet(17)} game={game(1)} />
-      <BracketGame pet1={pet(13)} pet2={pet(20)} game={game(2)} />
-      <BracketGame pet1={pet(15)} pet2={pet(18)} game={game(3)} />
-      <BracketGame pet1={pet(14)} pet2={pet(19)} game={game(4)} />
+      <h3>Championship</h3>
+      <BracketGame pet1={winnerFromGame(17)} pet2={winnerFromGame(18)} game={game(19)} />
     </div>
   ) : <div></div>;
 };

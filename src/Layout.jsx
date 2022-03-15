@@ -30,9 +30,9 @@ const Layout = ({ data, games, currentRound, setCurrentRound }) => {
 
   const round = parseInt(currentRound);
   const prevRound = round > 0 ? (round - 1).toString() : '0';
-  const nextRound = round < 5 ? (round + 1).toString() : '5';
+  const nextRound = round < 4 ? (round + 1).toString() : '4';
   const previousHidden = currentRound === '0' ? 'hidden' : '';
-  const nextHidden = currentRound === '5' ? 'hidden' : '';
+  const nextHidden = currentRound === '4' ? 'hidden' : '';
 
   const handleTouchStart = (e) => {
     const touch = e.touches[0];

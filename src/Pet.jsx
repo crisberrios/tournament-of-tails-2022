@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Pet = ({ pet, color }) => {
-  const petImage = pet.image ? <img src={`../assets/images/${pet.image}`} /> : null;
+  const petImage = pet.image ? <img src={`./images/${pet.image}`} /> : null;
   return (
     <div className={`pet ${color}`}>
       <div className="photo">{petImage}</div>
