@@ -1,0 +1,184 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #342E37;
+  background: #D4F1F7;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  html, body {
+      overflow-x: hidden;
+  }
+}
+
+.round {
+  padding: 24px;
+  pointer-events: none;
+}
+
+.game-container {
+  padding: 24px 0 0;
+}
+.game-container .bracket-group {
+  display: flex;
+}
+.game-container .pet {
+  background: #fff;
+  margin-bottom: 5px;
+  height: 194.2px;
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.game-container .pet.green {
+  box-shadow: 0 0 8px 0 rgba(20, 105, 25, 0.5), 0 6px 20px 0 rgba(20, 105, 25, 0.8);
+  border: 1px solid #008000;
+  margin: -1px;
+  margin-bottom: 5px;
+}
+.game-container .pet .seed {
+  font-size: 0.8rem;
+  padding: 6px 10px 6px 4px;
+}
+.game-container .pet .photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-container .pet .photo img {
+  max-width: 150px;
+  max-height: 150px;
+  padding: 5px;
+}
+.game-container .pet .text {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 0 5px 5px;
+  flex: 1;
+}
+
+.game-container .bracket-lines {
+  display: flex;
+  flex-direction: column;
+}
+.game-container .bracket-lines div {
+  border: 3px solid #bbb;
+  width: 100px;
+  border-left: 0;
+  flex: 1;
+}
+.game-container .bracket-lines .top {
+  margin-top: 80px;
+  border-bottom: 0;
+}
+.game-container .bracket-lines .middle {
+  border: 0;
+  border-right: 3px solid #bbb;
+  display: flex;
+  align-items: center;
+}
+.game-container .bracket-lines .middle span {
+  text-align: center;
+  font-size: 0.8rem;
+  width: 100%;
+  margin-top: -5px;
+}
+.game-container .bracket-lines .bottom {
+  margin-bottom: 80px;
+  border-top: 0;
+}
+.game-container .bracket-lines .upper {
+  border: 0;
+  width: 30px;
+}
+.game-container .bracket-lines div.lower {
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -5px;
+  width: 30px;
+}
+
+.layout {
+  display: flex;
+}
+
+.round-text {
+  cursor: pointer;
+  display: flex;
+  padding: 24px;
+  opacity: 0.6;
+}
+
+.round-text:hover {
+  opacity: 0.8;
+}
+
+.round-text img {
+  width: 25px;
+  height: 40px;
+  opacity: 0.3;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.round-text:hover img {
+  opacity: 0.6;
+}
+
+.previous img {
+  transform: rotate(180deg);
+}
+.nav {
+  position: fixed;
+  left: 400px;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+@media screen and (max-width: 400px) {
+  .nav {
+      display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.placeholder.hidden {
+  width: 258px;
+  height: 1px;
+  display: initial;
+}
+
+.full-bracket-container {
+  display: flex;
+}
+
+.full-bracket-container .bracket-group {
+  position: relative;
+}
+.round-of-32.left {
+  left: 383px;
+  position: absolute;
+}
+.sweet-16 .pets .pet:first-child {
+  margin-bottom: 197px;
+}
+.elite-8 .pets .pet:first-child {
+  margin-bottom: 616px;
+}
+.final-4 .pets .pet:first-child {
+  margin-bottom: 1460px;
+}
+.championship .pets .pet:first-child {
+  margin-bottom: 3150px;
+}
