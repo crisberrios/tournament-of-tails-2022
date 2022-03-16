@@ -24,10 +24,10 @@ const FullBracket = ({ data, games }) => {
       <h3>Tournament of Tails 2022</h3>
       <div className="full-bracket-container">
         <div className="play-in left">
-          <BracketGame pet1={pet(16)} pet2={pet(17)} game={game(1)} top={300} />
-          <BracketGame pet1={pet(13)} pet2={pet(20)} game={game(2)} top={1120} />
-          <BracketGame pet1={pet(15)} pet2={pet(18)} game={game(3)} top={1920} />
-          <BracketGame pet1={pet(14)} pet2={pet(19)} game={game(4)} top={2730} />
+          <BracketGame pet1={pet(16)} pet2={pet(17)} game={game(1)} top={120} />
+          <BracketGame pet1={pet(13)} pet2={pet(20)} game={game(2)} top={540} />
+          <BracketGame pet1={pet(15)} pet2={pet(18)} game={game(3)} top={964} />
+          <BracketGame pet1={pet(14)} pet2={pet(19)} game={game(4)} top={1386} />
         </div>
         <div className="sweet-16">
           <BracketGame pet1={pet(1)} pet2={winnerFromGame(1)} game={game(9)} />
@@ -40,17 +40,17 @@ const FullBracket = ({ data, games }) => {
           <BracketGame pet1={pet(6)} pet2={pet(11)} game={game(8)} />
         </div>
         <div className="elite-8">
-          <BracketGame pet1={winnerFromGame(9)} pet2={winnerFromGame(5)} game={game(13)} top={200} />
-          <BracketGame pet1={winnerFromGame(10)} pet2={winnerFromGame(6)} game={game(14)} top={400} />
+          <BracketGame pet1={winnerFromGame(9)} pet2={winnerFromGame(5)} game={game(13)} top={120} />
+          <BracketGame pet1={winnerFromGame(10)} pet2={winnerFromGame(6)} game={game(14)} top={340} />
           <BracketGame pet1={winnerFromGame(11)} pet2={winnerFromGame(7)} game={game(15)} top={576} />
           <BracketGame pet1={winnerFromGame(12)} pet2={winnerFromGame(8)} game={game(16)} top={805} />
         </div>
         <div className="final-4">
-          <BracketGame pet1={winnerFromGame(13)} pet2={winnerFromGame(14)} game={game(17)} top={600} />
+          <BracketGame pet1={winnerFromGame(13)} pet2={winnerFromGame(14)} game={game(17)} top={320} />
           <BracketGame pet1={winnerFromGame(15)} pet2={winnerFromGame(16)} game={game(18)} top={980} />
         </div>
         <div className="championship">
-          <BracketGame pet1={winnerFromGame(17)} pet2={winnerFromGame(18)} game={game(19)} top={1400} />
+          <BracketGame pet1={winnerFromGame(17)} pet2={winnerFromGame(18)} game={game(19)} top={740} />
         </div>
       </div>
     </div>

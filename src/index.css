@@ -166,19 +166,12 @@ html, body {
 .full-bracket-container .bracket-group {
   position: relative;
 }
-.round-of-32.left {
-  left: 383px;
-  position: absolute;
-}
-.sweet-16 .pets .pet:first-child {
+.elite-8 .pets .pet:first-child {
   margin-bottom: 197px;
 }
-.elite-8 .pets .pet:first-child {
+.final-4 .pets .pet:first-child {
   margin-bottom: 616px;
 }
-.final-4 .pets .pet:first-child {
-  margin-bottom: 1460px;
-}
 .championship .pets .pet:first-child {
-  margin-bottom: 3150px;
+  margin-bottom: 1460px;
 }
