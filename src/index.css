@@ -14,9 +14,12 @@ html, body {
   }
 }
 
+h2 {
+  text-shadow: 3px 3px rgba(200,200,200,0.5);
+}
+
 .round {
   padding: 24px;
-  pointer-events: none;
 }
 
 .game-container {
@@ -48,6 +51,8 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 150px;
 }
 .game-container .pet .photo img {
   max-width: 150px;
@@ -60,6 +65,9 @@ html, body {
   font-size: 0.9rem;
   padding: 0 5px 5px;
   flex: 1;
+}
+.game-container .pet.pointer {
+  cursor: pointer;
 }
 
 .game-container .bracket-lines {
@@ -166,6 +174,10 @@ html, body {
 .full-bracket-container .bracket-group {
   position: relative;
 }
+.sweet-16.left {
+  left: 383px;
+  position: absolute;
+}
 .elite-8 .pets .pet:first-child {
   margin-bottom: 197px;
 }
@@ -174,4 +186,24 @@ html, body {
 }
 .championship .pets .pet:first-child {
   margin-bottom: 1460px;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.zoom {
+  max-width: 95vw;
+  max-height: 95vh;
+  margin: 2.5vh auto;
+}
+
+.photo-container {
+  width: 100%;
+  display: flex;
 }

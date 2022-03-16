@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { petData, unknownPet } from './helpers';
 import BracketGame from './BracketGame';
 
-const FullBracket = ({ data, games }) => {
+const FullBracket = ({ data, games, setShowOverlay, setOverlayImage }) => {
   const pet = (id) => petData(data, id - 1);
   const winnerFromGame = (gameId) => {
     const winningId = games[gameId - 1].winner;
@@ -21,36 +21,36 @@ const FullBracket = ({ data, games }) => {
      based on the photo heights. Leave off on the round that has the most games. */
   return data.length && games.length ? (
     <div className="round">
-      <h3>Tournament of Tails 2022</h3>
+      <h2>Tournament of Tails 2022</h2>
       <div className="full-bracket-container">
         <div className="play-in left">
-          <BracketGame pet1={pet(16)} pet2={pet(17)} game={game(1)} top={120} />
-          <BracketGame pet1={pet(13)} pet2={pet(20)} game={game(2)} top={540} />
-          <BracketGame pet1={pet(15)} pet2={pet(18)} game={game(3)} top={964} />
-          <BracketGame pet1={pet(14)} pet2={pet(19)} game={game(4)} top={1386} />
+          <BracketGame pet1={pet(16)} pet2={pet(17)} game={game(1)} top={120} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(13)} pet2={pet(20)} game={game(2)} top={540} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(15)} pet2={pet(18)} game={game(3)} top={964} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(14)} pet2={pet(19)} game={game(4)} top={1386} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
         </div>
         <div className="sweet-16">
-          <BracketGame pet1={pet(1)} pet2={winnerFromGame(1)} game={game(9)} />
-          <BracketGame pet1={pet(8)} pet2={pet(9)} game={game(5)} />
-          <BracketGame pet1={pet(4)} pet2={winnerFromGame(2)} game={game(10)} />
-          <BracketGame pet1={pet(5)} pet2={pet(12)} game={game(6)} />
-          <BracketGame pet1={pet(2)} pet2={winnerFromGame(3)} game={game(11)} />
-          <BracketGame pet1={pet(7)} pet2={pet(10)} game={game(7)} />
-          <BracketGame pet1={pet(3)} pet2={winnerFromGame(4)} game={game(12)} />
-          <BracketGame pet1={pet(6)} pet2={pet(11)} game={game(8)} />
+          <BracketGame pet1={pet(1)} pet2={winnerFromGame(1)} game={game(9)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(8)} pet2={pet(9)} game={game(5)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(4)} pet2={winnerFromGame(2)} game={game(10)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(5)} pet2={pet(12)} game={game(6)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(2)} pet2={winnerFromGame(3)} game={game(11)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(7)} pet2={pet(10)} game={game(7)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(3)} pet2={winnerFromGame(4)} game={game(12)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={pet(6)} pet2={pet(11)} game={game(8)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
         </div>
         <div className="elite-8">
-          <BracketGame pet1={winnerFromGame(9)} pet2={winnerFromGame(5)} game={game(13)} top={120} />
-          <BracketGame pet1={winnerFromGame(10)} pet2={winnerFromGame(6)} game={game(14)} top={340} />
-          <BracketGame pet1={winnerFromGame(11)} pet2={winnerFromGame(7)} game={game(15)} top={576} />
-          <BracketGame pet1={winnerFromGame(12)} pet2={winnerFromGame(8)} game={game(16)} top={805} />
+          <BracketGame pet1={winnerFromGame(9)} pet2={winnerFromGame(5)} game={game(13)} top={120} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={winnerFromGame(10)} pet2={winnerFromGame(6)} game={game(14)} top={340} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={winnerFromGame(11)} pet2={winnerFromGame(7)} game={game(15)} top={576} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={winnerFromGame(12)} pet2={winnerFromGame(8)} game={game(16)} top={805} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
         </div>
         <div className="final-4">
-          <BracketGame pet1={winnerFromGame(13)} pet2={winnerFromGame(14)} game={game(17)} top={320} />
-          <BracketGame pet1={winnerFromGame(15)} pet2={winnerFromGame(16)} game={game(18)} top={980} />
+          <BracketGame pet1={winnerFromGame(13)} pet2={winnerFromGame(14)} game={game(17)} top={320} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <BracketGame pet1={winnerFromGame(15)} pet2={winnerFromGame(16)} game={game(18)} top={980} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
         </div>
         <div className="championship">
-          <BracketGame pet1={winnerFromGame(17)} pet2={winnerFromGame(18)} game={game(19)} top={740} />
+          <BracketGame pet1={winnerFromGame(17)} pet2={winnerFromGame(18)} game={game(19)} top={740} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
         </div>
       </div>
     </div>
@@ -62,4 +62,7 @@ export default FullBracket;
 FullBracket.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   games: PropTypes.arrayOf(PropTypes.object),
+  showOverlay: PropTypes.bool,
+  setShowOverlay: PropTypes.func,
+  setOverlayImage: PropTypes.func
 };

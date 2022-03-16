@@ -7,18 +7,20 @@ import Round1 from './Round1';
 import Round2 from './Round2';
 import Round3 from './Round3';
 import Round4 from './Round4';
+import Overlay from './Overlay';
 
 const Layout = ({ data, games, currentRound, setCurrentRound }) => {
   const [x, setX] = useState(0);
   const [swiping, setSwiping] = useState(false);
   const [swipeDiff, setSwipeDiff] = useState(0);
-  const [zooming] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [overlayImage, setOverlayImage] = useState('');
   const minDistance = 50;
-  const round0 = <Round0 data={data} games={games} />;
-  const round1 = <Round1 data={data} games={games} />;
-  const round2 = <Round2 data={data} games={games} />;
-  const round3 = <Round3 data={data} games={games} />;
-  const round4 = <Round4 data={data} games={games} />;
+  const round0 = <Round0 data={data} games={games} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />;
+  const round1 = <Round1 data={data} games={games} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />;
+  const round2 = <Round2 data={data} games={games} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />;
+  const round3 = <Round3 data={data} games={games} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />;
+  const round4 = <Round4 data={data} games={games} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />;
   let selectedRound = round0;
 
   switch (currentRound) {
@@ -47,7 +49,7 @@ const Layout = ({ data, games, currentRound, setCurrentRound }) => {
   };
   const handleTouchEnd = () => {
     const absX = Math.abs(swipeDiff);
-    if (swiping && !zooming && absX > minDistance) {
+    if (swiping && !showOverlay && absX > minDistance) {
       if (swipeDiff > 0) {
         setCurrentRound(prevRound);
       } else {
@@ -85,14 +87,21 @@ const Layout = ({ data, games, currentRound, setCurrentRound }) => {
   );
 
   const desktopView = (
-    <FullBracket data={data} games={games} />
+    <FullBracket data={data} games={games} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
   );
 
   const displayView = window.innerWidth > 400 ? desktopView : mobileView;
 
+  const handleClick = () => {
+    if (showOverlay) {
+      setShowOverlay(false);
+    }
+  };
+
   return (
-    <div>
+    <div onClick={handleClick}>
       {displayView}
+      {showOverlay && <Overlay image={overlayImage} />}
     </div>
   );
 };
@@ -103,5 +112,7 @@ Layout.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   games: PropTypes.arrayOf(PropTypes.object),
   currentRound: PropTypes.string,
-  setCurrentRound: PropTypes.func
+  setCurrentRound: PropTypes.func,
+  showOverlay: PropTypes.bool,
+  setShowOverlay: PropTypes.func
 };
