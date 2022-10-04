@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Pet = ({ pet, color, setOverlayImage, setShowOverlay }) => {
   const petImage = pet.image ? <img src={`./images/${pet.image}`} /> : null;
@@ -11,7 +11,7 @@ const Pet = ({ pet, color, setOverlayImage, setShowOverlay }) => {
     }
   };
 
-  const pointer = pet.image ? 'pointer' : '';
+  const pointer = pet.image ? "pointer" : "";
 
   return (
     <div className={`pet ${color} ${pointer}`} onClick={handleClick}>
@@ -30,5 +30,5 @@ Pet.propTypes = {
   pet: PropTypes.object,
   color: PropTypes.string,
   setOverlayImage: PropTypes.func,
-  setShowOverlay: PropTypes.func
+  setShowOverlay: PropTypes.func,
 };

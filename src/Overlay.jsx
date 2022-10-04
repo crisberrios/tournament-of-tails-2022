@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Overlay = ({ image }) => (
   <div className="overlay">
@@ -12,5 +12,5 @@ const Overlay = ({ image }) => (
 export default Overlay;
 
 Overlay.propTypes = {
-  image: PropTypes.string
+  image: PropTypes.string,
 };

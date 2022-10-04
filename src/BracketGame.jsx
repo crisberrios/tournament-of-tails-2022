@@ -1,12 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Pet from './Pet';
+import React from "react";
+import PropTypes from "prop-types";
+import Pet from "./Pet";
 
-const BracketGame = ({ pet1, pet2, game, top, setOverlayImage, setShowOverlay }) => {
-  const name = game && game.name ? game.name : '';
+const BracketGame = ({
+  pet1,
+  pet2,
+  game,
+  top,
+  setOverlayImage,
+  setShowOverlay,
+}) => {
+  const name = game?.name || "";
   const color = (petSeed) => {
-    const petId = (parseInt(petSeed)).toString();
-    return game && game.winner && game.winner === petId ? 'green' : 'grey';
+    const petId = parseInt(petSeed).toString();
+    return game?.winner && game.winner === petId ? "green" : "grey";
   };
 
   const style = top ? { top } : {};
@@ -15,8 +22,18 @@ const BracketGame = ({ pet1, pet2, game, top, setOverlayImage, setShowOverlay })
     <div className="game-container">
       <div className="bracket-group" style={style}>
         <div className="pets">
-          <Pet pet={pet1} color={color(pet1.seed)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
-          <Pet pet={pet2} color={color(pet2.seed)} setOverlayImage={setOverlayImage} setShowOverlay={setShowOverlay} />
+          <Pet
+            pet={pet1}
+            color={color(pet1.seed)}
+            setOverlayImage={setOverlayImage}
+            setShowOverlay={setShowOverlay}
+          />
+          <Pet
+            pet={pet2}
+            color={color(pet2.seed)}
+            setOverlayImage={setOverlayImage}
+            setShowOverlay={setShowOverlay}
+          />
         </div>
         <div className="bracket-lines">
           <div className="top"></div>
@@ -42,5 +59,5 @@ BracketGame.propTypes = {
   game: PropTypes.object,
   top: PropTypes.number,
   setOverlayImage: PropTypes.func,
-  setShowOverlay: PropTypes.func
+  setShowOverlay: PropTypes.func,
 };

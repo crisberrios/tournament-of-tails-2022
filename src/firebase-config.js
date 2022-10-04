@@ -1,16 +1,16 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAAoQAEaFXydEmvRttMHPQqH6N3UMhqgbw',
-  authDomain: 'tournament-of-tails.firebaseapp.com',
-  databaseURL: 'https://tournament-of-tails.firebaseio.com',
-  projectId: 'tournament-of-tails',
-  storageBucket: 'tournament-of-tails.appspot.com',
-  messagingSenderId: '660262587596',
-  appId: '1:660262587596:web:04b20bdc1bd1762ea84669',
-  measurementId: 'G-KN8DNWMDPP',
+  apiKey: "AIzaSyD45fcRM5dRPxu4Kt7JROgaWOku-fdmQa4",
+  authDomain: "ppes-tot-2022.firebaseapp.com",
+  projectId: "ppes-tot-2022",
+  storageBucket: "ppes-tot-2022.appspot.com",
+  messagingSenderId: "525404609516",
+  appId: "1:525404609516:web:522cd68ecdfdafc2273ec9",
+  databaseURL: "https://tournament-of-tails.firebaseio.com---",
+  measurementId: "G-KN8DNWMDPPOOOO",
 };
 
 // Initialize Firebase

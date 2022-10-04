@@ -4,36 +4,18 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'eslint:recommended',
-  ],
+  extends: ["plugin:react/recommended", "eslint:recommended"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ["react"],
   rules: {
-    indent: [
-      'error',
-      2,
-    ],
-    'linebreak-style': [
-      'error',
-      'unix'
-    ],
-    'quotes': [
-      'error',
-      'single'
-    ],
-    'semi': [
-      'error',
-      'always'
-    ]
+    indent: ["error", 2],
+    quotes: ["error", "double"],
+    semi: ["error", "always"],
   },
 };
